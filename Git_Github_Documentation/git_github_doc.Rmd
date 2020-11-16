@@ -84,7 +84,7 @@ Il existe sur Git trois zones bien distinctes, ou notre projet vas évoluer:
 + La zone de transit: Zone dans laquelle nous allons placer les fichiers à versionner (ex : mettre des objets dans un carton qui sera prêt à être envoyer au dépôt.
 + Le dépôt : Zone ou les fameux « snapshot » sont versionnés et stockés. Une référence à cette version sera également créée afin de pouvoir la consulter.
 
-![picture 1](/home/ajupiter/Bureau/6.jpg)
+![Mécanisme de Git](/home/ajupiter/Bureau/6.jpg)
 
 
 Chaque snapshot représente une version de votre projet. Sur Git ceci est appelée ***un commit***.
@@ -95,7 +95,7 @@ Les commits sont stockés par ordre chronologique.
 
 Exemple:
 
-![picture 2](/home/ajupiter/Bureau/7.png)
+![Le Commit](/home/ajupiter/Bureau/7.png)
 
 Le commit E est la version la plus récente du projet.
 L’ensemble de c’est commit forment une branche.
@@ -110,11 +110,11 @@ Très souvent les développeurs utilisent des branches secondaires pour réalise
 
 Exemple de projets à deux branches:
 
-![picture 3](/home/ajupiter/Bureau/8.png)
+![Système de branches](/home/ajupiter/Bureau/8.png)
 
 Il est très facile de naviguer entre les branches. Il existe un élément appelé « HEAD » qui pointe par défaut sur la branche Master. Mais vous pouvez le manipuler très facilement et le faire pointer sur la branche de votre choix.
 
-## La fusion de branche
+## La fusion de branches
 
 Comme vous l’avez compris, il est possible de fusionner des branches. C’est la raison pour laquelle dans un projet git, les « features » et tests sont réalisés dans des branches parallèles (secondaire). Une fois les tests réalisés ou « features » terminé, nous pouvons les fusionner avec notre branche principale afin d’y ajouter les fonctionnalités des branches secondaires.
 Il existe deux types de fusion :
@@ -124,7 +124,7 @@ Exemple:
 + Branche principale: Master
 + Branche secondaire: foo
 
-![picture 4](/home/ajupiter/Bureau/9.png)
+![Merge fast forward](/home/ajupiter/Bureau/9.png)
 
 \newpage
 
@@ -133,7 +133,7 @@ Dans cet exemple, une branche secondaire a été créée au niveau du commit D e
 Merge three way: Un peu plus complexe, cette fusion s’effectue lorsqu’il y a déjà eu des commits réalisés sur la branche principale après la création de la branche secondaire.
 Dans ce cas, Git va prendre en considération trois éléments: le dernier commit sur la branche principale (Master), le dernier commit sur la branche secondaire (Foo) et le 1er ancêtre commun (ici F). A partir de la Git vas créer un commit de merge.   
 
-![picture 5](/home/ajupiter/Bureau/10.png)
+![Merge three way](/home/ajupiter/Bureau/10.png)
 
 Il peut y avoir des conflits surtout lorsqu’un même fichier à été modifier au même endroit (ex: même lignes) dans les versions «G» et «I». Il faudra alors indiquer à Git quelle modification il devra privilégier lors de la fusion.
 
@@ -141,7 +141,7 @@ Il peut y avoir des conflits surtout lorsqu’un même fichier à été modifier
 
 Grâce à ce système de commit, de branche et de fusion, voici à quoi peut ressembler un projet git un peu plus complexe:
 
-![picture 6](/home/ajupiter/Bureau/11.png)
+![système de commit](/home/ajupiter/Bureau/11.png)
 
 \newpage
 
