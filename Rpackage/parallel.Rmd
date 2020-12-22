@@ -75,9 +75,7 @@ Comme l’illustre la figure 1, un GPU contient un bien plus grand nombre d’un
 
 # Le package parallel et son utilisation
 
-Le package parallel est inclus dans R depuis sa version 2.14.0 (31 octobre 2011).  Il propose un ensemble de fonctionnalités pour introduire du parallélisme dans  les codes R: il s’agit également d’attirer le plus grand nombre d’utilisateurs de  R et développeurs de packages vers le calcul parallèle compte tenu de l’évolution  des architectures matérielles. parallel est dérivé des packages CRAN multicore  (2009-) et snow (2003-): il propose des fonctions de substitutions à la plupart  des fonctionnalités de ces deux packages, en intégrant par ailleurs la gestion des  générateurs de nombres pseudo-aléatoires parallèles.  De nombreux codes R intègrent les fonctions de la famille *apply qui sont des versions avantageuses des boucles for (en terme de performance souvent et en terme  de lisibilité). Dans cette logique fonctionnelle, la plupart des utilisateurs de parallel  se focaliseront sur les versions parallèles de ces fonctions: parApply, parLapply,  parSapply, parVapply et autres (dans la suite, on parlera des par*apply). Ces  fonctions reprennent les même arguments que les versions séquentielles, mais né-  cessitent la création d’un pool de processus fils avec la fonction makeCluster, le  passage de ce pool en premier argument, puis la suppression de ce pool: 
-
-`library(parallel)`
+Le package parallel est inclus dans R depuis sa version 2.14.0 (31 octobre 2011).  Il propose un ensemble de fonctionnalités pour introduire du parallélisme dans  les codes R: il s’agit également d’attirer le plus grand nombre d’utilisateurs de  R et développeurs de packages vers le calcul parallèle compte tenu de l’évolution  des architectures matérielles. parallel est dérivé des packages CRAN multicore  (2009-) et snow (2003-): il propose des fonctions de substitutions à la plupart  des fonctionnalités de ces deux packages, en intégrant par ailleurs la gestion des  générateurs de nombres pseudo-aléatoires parallèles.  De nombreux codes R intègrent les fonctions de la famille *apply qui sont des versions avantageuses des boucles for (en terme de performance souvent et en terme  de lisibilité). Dans cette logique fonctionnelle, la plupart des utilisateurs de parallel  se focaliseront sur les versions parallèles de ces fonctions: parApply, parLapply,  parSapply, parVapply et autres (dans la suite, on parlera des par*apply). Ces  fonctions reprennent les même arguments que les versions séquentielles, mais nécessitent la création d’un pool de processus fils avec la fonction makeCluster, le passage de ce pool en premier argument, puis la suppression de ce pool: 
 
 \newpage
 
@@ -180,7 +178,7 @@ stopCluster(cl) # libère 4 coeurs - fin du calcul
 La syntaxe est donc pratiquement la même que dans le cas non parallèle. Il suffit simplement d’utiliser la fonction makeCluster() au début pour réserver le nombre de coeurs nécessaires et la fonction stopCluster() à la fin pour libérer les coeurs. De même, c’est la fonction clusterApply() qui permet de répartir la fonction myfun() vers les différents coeurs.
 
 
-# Explication et Application des fonctions "apply"
+# Explication et application des fonctions "apply"
 
 Il existe des versions parallélisées de ces fonctions. Celles-ci sont nommées :
 
@@ -210,11 +208,13 @@ time_benchmark <- system.time(
 )
 ```
 
+Voici le benchmark de ce bout de code:
+
 ```{r}
 time_benchmark
 ```
 
-Ce calcul a pris à peu près 17 secondes.  Les quatre calculs effectués ci-dessus sont totalement indépendants. C'est à dire. ils ne dépendent pas les uns des autres. La moyenne de l'élément 1 ne dépend en aucun cas de la moyenne de l'élément 2. Par défaut, la plupart des fonctions de R s'exécutent sur un seul coeur de traitement. Avec les processeurs multicœurs de la plupart des systèmes actuels, le potentiel de réduction du temps d'exécution en divisant simplement les tâches sur plusieurs cœurs est très important. Ci-dessous, le même calcul est implémenté en utilisant l'équivalent multi-core de lapply (parLapply) de la bibliothèque parallèle:
+Ce calcul a pris à peu près 17 secondes.  Les quatre calculs effectués ci-dessus sont totalement indépendants. C'est à dire qu'ils ne dépendent pas les uns des autres. La moyenne de l'élément 1 ne dépend en aucun cas de la moyenne de l'élément 2. Par défaut, la plupart des fonctions de R s'exécutent sur un seul coeur de traitement. Avec les processeurs multicœurs de la plupart des systèmes actuels, le potentiel de réduction du temps d'exécution en divisant simplement les tâches sur plusieurs cœurs est très important. Ci-dessous, le même calcul est implémenté en utilisant l'équivalent multi-core de lapply (parLapply) de la bibliothèque parallèle:
 
 
 ```{r}
@@ -261,4 +261,61 @@ time_foreach[3]
 parallel::stopCluster(cl)
 ```
 
+# Génération de nombres pseudo-aléatoires
+
+Dans de nombreux cas, les calculs à paralléliser font intervenir le générateur de  nombres pseudo-aléatoires, au travers de nombreuses fonctions comme sample,  rnorm, runif,... C’est bien sûr le cas des implémentations du boostrap, des méthodes Monte-Carlo, des méthodes itératives avec point de départ (k-means par  exemple, méthodes EM), etc. Techniquement parlant, le générateur réalise le calcul des éléments d’une suite mathématique qui ont des propriétés proche du hasard.  Cette suite doit cependant être initialisée à partir d’un graine (ou seed): il s’agit  de l’objet .Random.seed (un vecteur d’entier, pour les curieux) que l’on peut initialiser avec la commande set.seed comme suit:
+
+```{r eval=FALSE}
+set.seed(63)
+rnorm(1)
+1.324112
+set.seed(63) #reproductibilité
+rnorm(1)  1.324112
+rnorm(1)  -1.873185  
+```
+
+Dans le cas parallèle, chaque processus, père ou fils, doit proposer des séquences  de nombres indépendantes... il faut donc garantir que les graines ne sont pas les  même sur chaque processus!
+Le package parallel propose une solutionrobuste: le générateur dit « L’Ecuyer (1999) » est disponible via la commande  RNGkind("L’Ecuyer-CMRG") et il présente les bonnes propriétés pour la génération en parallèle. 
+Pour s’en servir, la procédure sera la suivante en fonction des  approches:
+
++ 1. ajouter clusterSetRNGStream(cl) (cette fonction contient un appel à  RNGkind("L’Ecuyer-CMRG")) après tout appel à makeCluster;
++ 2. laisser l’option mc.set.seed=TRUE (valeur par défaut) lors de l’appel à  mclapply ou mcparallel.  
+
+Un exemple ci-dessous qui permet d’estimer la variabilité des coefficients d’un modèle linéaire par la méthode bootstrap, en parallèle avec parLapply:
+
+```{r eval=FALSE}
+n <- 1000
+nb.simu <- 1000
+x <- rnorm(n,0,1) 
+y <- rnorm(n,1+2*x,2) 
+data <- data.frame(x,y)
+cl <- makeCluster(4, type="FORK")
+clusterSetRNGStream(cl) 
+bootstrap.coef <- parLapply(cl, 1:nb.simu, fun=function(i) {  
+  bootstrap.resample <- data[sample(n,n,replace=T),]
+  lm(y~x,bootstrap.resample)$coef  
+  })  
+stopCluster(cl) 
+```
+
+\newpage
+
+# Conclusion
+
+Le package parallel de R permet de faire du calcul parallel dans un language de haut niveau.
+Néaenmoins, il est necessaire d'avoir quelques notions/connaissances en informatique theorique pour la compréhension global de ce package.
+Compte tenu de ce paramètre, ce document ne couvre pas l'ensemble des fonctionnalité qu'offre de package, il a pour but de faire une petite présentation/introduction sur la parallelisation de code qui est une autre manière programmer et qui n'est pas intuitif au départ.
+C'est pourquoi, ce doculent présente quelques explications simples sur la notions de parallelisation avec quelques cas d'utilisation sous le langage R avec ce package parallel. 
+
+# Bibliographie
+
++ Calcul en parallèle sur CPU avec R - Sophie Baillargeon, Université Laval
+
++ Calcul parallèle avec R - Vincent Miel & Violaine Louvet
+
++ Introduction to parallel computing with R - Hana Sevcikova, University of Washington
+
++ Quick Intro to Parallel Computing in R - Matt Jones
+
++ Getting Started With Parallel Programming In R - Jens Moll-Elsborg
 
