@@ -1,0 +1,518 @@
+---
+title: "Evaluation des travaux de recherches en R & Mathématiques"
+author: "Adrien JUPITER"
+date: "01 Février 2021"
+output:
+  pdf_document:
+    toc: yes
+  html_document:
+    df_print: paged
+    toc: yes
+  word_document:
+    toc: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+\newpage
+
+
+## Introduction
+Ce document evaluera 12 travaux de recherches des étudiants de PSB en MSC Data 
+Management de la promotion 2020-2022.
+Ces travaux comportereons 6 travaux en R et 6 travaux en Mathématiques. Ces sujets 
+ont été choisis selon mes préferences et ma curiosité liés aux sujets.
+
+Ces differents travaux seront évalué selon 5 critères principaux: 
+
++ 1) Rédaction/orthographe du document en RMarkdown 
++ 2) Présentation/Structuration du document (paragraphe, lien ...) 
++ 3) Exemple de code en R/Mathématique claire et bien implementé/expliqué
++ 4) Compréhension global du sujet    
++ 5) Source
+
+Les 6 travaux selectionné en R sont les suivants: 
+
++ quantmodfr par [**Antoine SERREAU & Corentin BRETONNIERE**](https://github.com/aserreau/PSB1/blob/main/Travaux Packages/TutoPackageQuantmodFR.pdf)
++ rpart par [**Siva CHANEMOUGAM & Maxime ALLAKER**](https://github.com/Siva-chane/PSBX/blob/main/package Rpart/Rpart-package.pdf)
++ dabr par [**Antoine SERREAU & Corentin BRETONNIERE**](https://github.com/CorentinBretonniere/CBRETONNIERE-PSBX/blob/main/dabr.pdf)
++ ggplot2 par [**Claude REN**](https://github.com/Cldren/REN_PSBx/blob/main/Packages_presentation/ggplot2/ggplot2_.pdf)
++ dypler par [**Soukaina EL GHALDY & Jiayue LUI**](https://github.com/soukainaElGhaldy/PSB-X/blob/main/R_packages/dplyr_package/dplyr-tuto.pdf)
++ data.table par [**moi même & Claire MAZZUCATO**](https://github.com/clairemazzucato/PSBX/blob/main/Packages/Data.table/Package-data.table.pdf)
+
+Les 6 travaux selectionné en Mathématique sont les suivants: 
+
++ Validation croisé par [**Rindra LUTZ & Nicolas Allix**](https://github.com/Nicolas-all/PSB1/blob/main/Validation-Croisée.pdf)
++ SVM  par [**Ramya HOUNTONDJI & Florine HOUNTONDJI**](https://github.com/fcom-stack/PSBX/blob/main/SVM/svm.pdf)
++ Kmeans++ [**Lucas BILLAUD, Maxime ALLAKER & Siva CHANEMOUGAM**](https://github.com/Lucasblld/PSBX/blob/main/maths/k-means.pdf)
++ KNN par [**Corentin BRETONNIERE, Benjamin GUIGON & Antoine SERREAU**](https://github.com/aserreau/PSB1/blob/main/Travaux%20Math%C3%A9matiques/Article_KNN.pdf)
++ Cryptographie par [**Marko ARSIC & William ROBACHE**](https://github.com/ARSICMrk/ARSIC_PSBx/blob/main/Maths_BD/Cryptographie/Cryptographie.pdf)
++ Interpolation des donnée spatiale par [**Arnaud Bruel YANKO et moi même**](https://github.com/ARNAUD-BRUEL-YANKO/PSBX/blob/main/Projet_Maths.pdf)
+
+
+Afin de respecter une méthodologie de notation, tous les travaux seront evalue de la façon suivante: 
+
++ On commencera par faire une synthese du travail en question, ici sera expliqué l'enjeux du sujet,
+dans quel contexte le package ou le sujet de recherche est utilisé ...
+
++ Par la suite, nous selectionnerons des parties de code les plus importantes ou significatives et/ou des expressions mathématiques à retenir avec une explication claire et succincte de leur signification, de leur intérêt et/ou de leurs défauts
+
++ Une évaluation du travail en question suivant mes 5 critères de notations
+
++ Et enfin, une conclusion résumant votre appréciation du travail en question
+
+
+Pour terminer cette introduction, l'objectif de cette evaluation sera de démontrer avoir eu la volonté d’appréhender en profondeur le sens, la pertinence et la qualité de chacun des travaux évalués. De faire preuve d’un sens critique bienveillant et de mettre en évidence une réflexion réelle sur les documents appréhendés.
+
+
+La suite de ce document se divisera en deux grandes partie, la premiere regroupant l'ensemble des travaux en Mathematique et la deuxieme regroupant l'ensemble des travaux en R.
+
+
+
+\newpage
+
+
+# Mathématique
+
+## Travail de Rindra LUTZ & Nicolas Allix (**Validation croisé**)
+
+### Synthese du travail
+
+La validation croisée (« cross-validation ») est, en apprentissage automatique, une méthode d’estimation de fiabilité d’un modèle fondé sur une technique d’échantillonnage.
+La validation croisé présenté par Rindra LUTZ & Nicolas Allix synthétise bien les différentes notions liées au sujets.
+Des exemples de cas d'utilisation dans le domaine du datamining sont ici exposé (méthode décriptive & méthode prédictive)
+Différentes méthodes existent pour faire de la validation croisé (LOOCV, LKOCV, k-ford cross validation).
+
+
+### Un extrait commenté des expressions mathématiques à retenir
+
+
+Malheureusement, il n'y a pas d'expression mathématique dans le sujet sur lequel on pourrait commenter.
+
+
+### Evaluation du travail en question suivant mes 5 critères
+
++ Rédaction/orthographe: Dans l'ensemble, la qualité de rédaction du document est assez bonne.
++ Présentation/Structuration: L'organisation des idées sont OK. Il manque par contre,
+les numerotations des pages, des titres ...
++ Formule mathématique: Pas de formule mathématique?
++ Compréhension global du sujet: Le sujet est bien compris 
++ Sources: Pas de source
+
+
+### Conclusion
+
+Le travail rendu par Rindra LUTZ & Nicolas Allix porte sur le sujet de la "validation croisé".
+L'ensemble du travail rendu par Rindra LUTZ & Nicolas Allix est assez claire, cependant il manque un peu de structuration au
+niveau du document (numerotation des pages, titres ...). 
+
+Les différentes notions concernant le sujet sont bien abordé/expliqué. On arrive a comprendre assez rapidement
+l'intérêt et l'objectif du sujet abordé.
+
+On notera par contre l'abscence de formulation mathématique qui est demandé pour ce travail et aussi 
+l'absence de citation des sources.
+
+\newpage
+
+## Travail de Ramya HOUNTONDJI & Florine HOUNTONDJI (**SVM**)
+
+### Synthese du travail
+
+Les machines à vecteurs de support ou séparateurs à vaste marge (en anglais support vector machine, SVM) sont un ensemble de techniques d'apprentissage supervisé destinées à résoudre des problèmes de discriminationnote 1 et de régression. Les SVM sont une généralisation des classifieurs linéaires. 
+L’idée est de recherché une règle de décision basée sur une séparation par hyperplan de marge optimale.
+La Stochastic Gradient Descent (SGD) est un algorithme d’optimisation qui permet de trouver le
+minimum de n’importe quelle fonction convexe en convergeant progressivement vers celui-ci. L’interet
+de cet algorithme à notre problème reside sur la trouvaille d’un hyperplan à marge optimale permettant
+ainsi d’avoir une meilleur classification.
+
+### Un extrait commenté des expressions mathématiques à retenir
+
+Une des expressions mathématiques à retenir et celle de la maximisation de la marge d'un hyperplan, analysons l'équation suivante: 
+
+$\displaystyle \mathop{\operatorname{arg\,max}}\limits_{w,\,b}\min\limits_k \frac{l_k (w^\top \cdot x_k+b)}{\|w\|}$ 
+
+En mathématiques, l'argument du maximum, noté arg min ou argmin, est l'ensemble des points en lesquels une expression atteint sa valeur minimal.
+
+L'expression $l_k (w^\top \cdot x_k+b)$ correspond au produit du label $l_k$ par l'équation d'un hyperplan
+$w^\top \cdot x_k+b$.
+
+Le vecteur w est appelé le vecteur de poids, le scalaire b est appelé biais.
+
+$\|w\|$ est donc la norme du vecteur poid w.
+
+
+
+### Evaluation du travail en question suivant mes 5 critères
+
+Pour ce travail: 
+
++ Rédaction/orthographe: Ok
++ Présentation/Structuration: Ok
++ Formule mathématique: Plusieurs formules mathématiques bien illustré et expliqué
++ Compréhension global du sujet: Le sujet est bien compris 
++ Sources: Pas de source
+
+
+### Conclusion
+
+Bon travail dans l'ensemble
+
+\newpage
+
+## Travail de Lucas BILLAUD, Maxime ALLAKER & Siva CHANEMOUGAM (**Kmeans++**)
+
+### Synthese du travail
+K-means est un algorithmes de clustering pour l’apprentissage non supervisé. C’est un algorithme assez simple et rapide. On dispose d'un ensemble de données (instances) dans un espace et on choisit K points qui regrouperont des sous ensembles de données. Une fois que les K points sont un cluster de données (en utilisant une calcul de distance afin de regrouper les données), le test se fait en calculant la distance du plus proche cluster.
+
+Comme la régression linéaire, on peut utiliser K-means pour faire de la classification.  un algorithme simple et rapide à déployer sa complexité peut être quadratique O(N^2). Donc, l’intention de l’optimiser et proposer une nouvelle variante, K-means++. Différemment de la version de base où les cluster sont placés de façon aléatoire au départ et se stabilisent au fur et à mesure, la variante cherche à augmenter la précision ainsi que la rapidité  de K-means en plaçant les K cluster uniformément (avec une pondération donnée par une function appelée  D^2 weighting. Dans un mot, K-means++ possède  complexité O(log). Cependant le choix du nombre de cluster pose toujours un problème.
+
+### Un extrait commenté des expressions mathématiques à retenir
+
+K-means est un algorithme qui essaye de trouver un centroid d’une ensemble de données (cluster) dispose dans un espace. L’algorithme est quadratique, car tant que n’y a pas de changement (stabilisation) l’exécution ne s’arrête pas. Il faut aussi souligner que la fonction utilisé afin de calculer le centroid joue un rôle assez important si on veut vraiment calculer le coût d’execution. Normalement, K-means utilise la distance euclidienne qui est la distance d’une ligne droite entre deux points.  
+
+K-means++ offre une étape de pré-traitement afin de placer les K cluster uniformément sur l’espace où les données sont disposés. La fonction D^2 weighting est responsable pour cette optimisation qui s’en suit le théorème suivant : Theorem 3.1.. Dans un mot, la démonstration consiste à montrer que les clusters formés avec K-means++ sont plus précis.
+
+
+
+### Evaluation du travail en question suivant mes 5 critères
+
++ Rédaction/orthographe: OK
++ Présentation/Structuration: Ok
++ Formule mathématique: Ok
++ Compréhension global du sujet: Sujet compris 
++ Source: Ok
+
+### Conclusion
+
+Lucas BILLAUD, Maxime ALLAKER & Siva CHANEMOUGAM ont bien travaillé sur le sujet,
+l'essentiel est là. Bon travail.
+
+
+\newpage
+
+## Travail de Corentin BRETONNIERE, Benjamin GUIGON & Antoine SERREAU (**KNN**)
+
+### Synthese du travail
+K Nearest Neighbor (KNN) est un algorithme d'apprentissage supervisé simple mais il conserve toutes les données en phase d'apprentissage afin de calculer l'hypothèse pendant la phase de test. Même si KNN est gourmand, l'algorithme est très simple et rapide. Nous avons un ensemble de données dans un espace et utilisons le calcul de la distance pour sélectionner les points K afin de regrouper les données. Ce test est effectué en calculant la majorité des votes pour la régression ou la classification. Enfin, KNN est un algorithme de déploiement simple et rapide. Il peut être utilisé pour la régression et la classification, et étant donné qu'il peut effectuer un apprentissage supervisé, il n'est pas nécessaire de faire d'autres hypothèses et d'ajuster plusieurs paramètres pour construire un modèle. Cependant, il s'agit d'un algorithme très fastidieux car il utilise l'ensemble des données d'entraînement et est sensible à la qualité des données.
+
+### Un extrait commenté des expressions mathématiques à retenir
+
+L'algorithme est basé sur le calcul de la distance entre les données dans l'espace. Les fonctions de distance les plus connues sont la distance euclidienne, la distance de Manhattan, la distance de Minkowski, la distance de Hamming, la distance de Chebyshev, etc. La distance euclidienne est la distance de la ligne droite entre deux points. La distance de Manhattan est la distance pour calculer la longueur du chemin entre deux points. Par exemple: la distance entre deux blocs de Manhattan. Le point sur lequel il faut insister est le choix de K. K est le nombre d'instances de cluster et il n'existe pas de méthode spécifique pour trouver le nombre et la fonction de distance optimale. Cela se fait généralement par essais et erreurs (brute force) et en calculant l'erreur à travers chaque valeur K. Cependant, il est recommandé que le nombre d'instances du cluster soit un nombre impair pour faciliter le vote à la majorité.
+
+
+### Evaluation du travail en question suivant mes 5 critères
+
+Pour ce travail:
+
++ Rédaction/orthographe: Dans l'ensemble la rédaction et l'orthographe est correct
++ Présentation/Structuration: Le document est bien structuré, numeroté
++ Formule mathématique: Plusieurs formules mathématiques bien illustré et expliqué
++ Compréhension global du sujet: Ok
++ Bibliographie: Ok
+
+### Conclusion
+
+Tout le nécessaire est là. L'ensemble est bien structuré et le sujet bien compris.
+
+\newpage
+
+## Travail de Marko ARSIC & William ROBACHE (**Cryptographie**)
+
+### Synthese du travail
+La cryptographie est une des disciplines de la cryptologie s'attachant à protéger des messages (assurant confidentialité, authenticité et intégrité) en s'aidant souvent de secrets ou clés. Elle se distingue de la stéganographie qui fait passer inaperçu un message dans un autre message alors que la cryptographie rend un message supposément inintelligible à autre que qui-de-droit.
+
+Elle est utilisée depuis l'Antiquité, mais certaines de ses méthodes les plus modernes, comme la cryptographie asymétrique, datent de la fin du XXe siècle. 
+
+Les auteurs ici nous présente les 2 principles méthodes de cryptage à savoir le cryptage à clé asymétrique et le cryptage à clé symétrique.
+
+### Un extrait commenté des expressions mathématiques à retenir
+
+Analysons la Méthode de Diffie et Hellman: 
+
+La méthode de Diffie et Hellman (1976) permet à deux interlocuteurs de se mettre d’accord sur une clé privée commune.  
+L’intérêt du mécanisme est que les échanges d’information peuvent se faire de façon publique. Appelons Alex et Barbara les interlocuteurs, le processus est le suivant :  
+Alex et Barbara se mettent tout d’abord d’accord sur un grand nombre premier $n$ commun. De plus, ils choisissent un entier (clé publique) $p$.  
+Ensuite Alex choisit $A$ sa clé privée et Barbara choisit $B$ sa clé privée.  
+Alex envoie alors $\beta=pA$ modulo $n$ et Barbara envoie $\alpha=p^B$ modulo $n$.  
+Il reste à Alex à calculer $\alpha^A[n]$ pour obtenir la clé privée commune à Alex et Barbara.  
+De même Barbara obtient la même clé en calculant $\beta^p[n]$.  
+Cette clé commune est donc $p^{AB}[n]$. 
+Ce principe est utilisable par exemple sur le réseau internet.
+
+
+### Evaluation du travail en question suivant mes 5 critères
+
++ Rédaction/orthographe: Ok
++ Présentation/Structuration: Ok
++ Formule mathématique: La théorie est bien illustré
++ Compréhension global du sujet: Bonne compréhension des concepts importants
++ Source: Ok
+
+### Conclusion
+
+Sujet intéressant sur la cryptographie, l'ensemble est bien expliqué et compris.
+
+
+\newpage
+
+## Travail de Arnaud Bruel YANKO & Adrien JUPITER (**Interpolation des données spatiale**)
+
+
+### Synthese du travail
+Les techniques d'interpolation spatiale peuvent être séparées en deux principales catégories : les approches déterministes et géostatistiques. Pour faire simple, les méthodes déterministes n'essayent pas de capturer la structure spatiale des données. Elles utilisent seulement des équations mathématiques prédéfinies pour prédire des valeurs à des positions où aucun échantillon n'est disponible (en pondérant les valeurs attributaires des échantillons dont la position dans la parcelle est connue). Au contraire, les méthodes géostatistiques cherchent à ajuster un modèle spatial aux données. Cela permet de générer une valeur prédite à des positions non échantillonnées dans la parcelle (comme les méthodes déterministes) et de fournir aux utilisateurs une estimation de la précision de cette prédiction.\\
+Les approches géostatistiques regroupent le krigeage et ses dérivés. Toutes les méthodes qui seront discutées doivent être appliquées sur des variables continues (NDVI, rendement, teneur en carbone du sol) et pas factoriel (ex : une classe issue d'une méthode de classification) ou binaires (variables avec des valeurs de 0 ou 1 ? il existe des méthodes pour ce type de données, notamment des méthodes de krigeage 
+
+### Un extrait commenté des expressions mathématiques à retenir
+
+La méthode du polygone de Thiessen permet d'estimer des valeurs pondérées en prenant en considération chaque station pluviométrique. Elle affecte à chaque pluviomètre une zone d'influence dont l'aire, exprimée en $\%$, représente le facteur de pondération de la valeur locale.\\
+
+Les polygones de Thiessen construits, leurs surfaces vont servir à construire 1' estimation
+globale de la moyenne de la variable régionalisée z sur la zone $\sigma$. Celle-ci sera égale à la
+moyenne des valeurs observées sur chaque site pondérées par leur surface d'influence relative.
+
+\begin{equation}
+ EG(T) = \sum_{i=1}^{n} \frac{S_{i}}{S} z(s_{i})
+\end{equation}
+
+où 
+\begin{itemize}
+	\item EG(T):=estimation globale (Thiessen);
+	\item $S_{i}$ est la surface du polygone d'influence du Site s1;
+	\item $S$ la surface de la zone entière $\sigma$ tel que : $S= \sum_{i=1}^{n} S_{i}$
+\end{itemize}
+
+
+### Evaluation du travail en question suivant mes 5 critères
+
++ Rédaction/orthographe: Ok
++ Présentation/Structuration: Ok
++ Formule mathématique: Les formules mathématiques sont bien illustré et expliqué
++ Compréhension global du sujet: Le sujet est très bien compris
++ Sources: Ok
+
+
+### Conclusion
+Ce document montre bien que le sujet est maitrisé. C'est un document de qualité, 
+très bon travail.
+
+
+# R
+
+## Travail de Antoine SERREAU & Corentin BRETONNIERE (**quantmodfr**)
+
+### Synthese du travail
+
+Le package quantmod pour R est conçu pour aider le trader quantitatif dans le développement, le test et le déploiement de modèles de trading basés sur des statistiques.
+
+C'est un environnement de prototypage rapide, où les traders quantitatifs peuvent explorer et créer rapidement et proprement des modèles de trading. 
+
+Les auteurs de ce document ont mis les differents cas d'utilisant lié à ce package.
+
+### Un extrait commenté de code R à retenir
+
+**chartSeries(AAPL, name = "Evolution du cours d'Apple",  subset="2020-06::2020-11", type = "candlesticks", theme = "white",
+            TA = c(addWPR(), addSAR(), addROC()))**
+
+
+Il s'agit ici d'une fonction du package qui permet de plotter les differents
+indicateurs dans le monde du trading.
+
+Il y a six paramètres à entrer, en premier il s'agit de l'indice boursier, ici est
+entré AAPL pour l'indice boursier de APPLE.
+En 2e le nom du graphique, en 3e l'intervalle de temps à afficher, en 4e le type de graphique.
+En 5e le theme du graphique pour personnaliser l'affichage et en dernier les indicateur
+qui vont servir pour les analyses.
+
+### Evaluation du travail en question suivant mes 5 critères
+
++ Rédaction/orthographe: Ok
++ Présentation/Structuration: Ok
++ Code R: Code R présent et claire
++ Compréhension global du sujet: Le sujet est très bien compris
++ Sources: OK
+
+### Conclusion
+
+C'est un package très interessant pour ceux qui s'intèresse un peu au monde du trading.
+Très bonne introduction du sujet.
+
+\newpage 
+
+## Travail de Siva CHANEMOUGAM & Maxime ALLAKER (**rpart**)
+
+
+### Synthese du travail
+Le package R rpart propose une implémentation des méthodes de construction d'arbres de décision inspirées de l'approche CART décrite dans l'ouvrage éponyme de Breiman, Friedman, Olshen et Stone en 1983. Ce billet propose une prise en main élémentaire de rpart.
+
+
+### Un extrait commenté de code R à retenir
+
+On consrtuit l'arbre: 
+
+**ptitanic.Arbre <- rpart(survived~.,data= ptitanic.apprt,control=rpart.control(minsplit=5,cp=0))**
+
++ Ptitanic est un dataset fourni dans R avec la librairie Rpart, un jeu de données concernant le nauffrage d'un titanic et a bord des individus classés par categories (variables), le fichier contient 1309 individus et 6 variables.
+
++ La formule utilisée survived~. indique qu'on souhaite prédire la variable survived en fonction de toutes les autres. Le principe général est que la (ou les) variable(s) à prédire sont à gauche du symbole ~ alors que les variables prédictives sont à droite du symbole. Ici, le point . permet d'indiquer qu'on souhaite utiliser toutes les variables des données comme prédicteurs sauf les variables à prédire.
+La commande rpart.control permet preciser les elements à modifier dans la construction de l'arbre, le minsplit permet de decouper les feuilles qui contiennent au moins 5 observations, cp=0 pour dire sans contrainte de decoupage.
+
+### Evaluation du travail en question suivant mes 5 critères
+
++ Rédaction/orthographe: Ok
++ Présentation/Structuration: Ok
++ Code R : Code R Ok
++ Compréhension global du sujet: Le sujet est très bien compris
++ Sources: OK
+
+
+### Conclusion
+
+Bon travail dans l'ensemble.
+
+
+\newpage
+
+## Travail de Antoine SERREAU & Corentin BRETONNIERE(**dabr**)
+
+### Synthese du travail
+
+Le package dabr fournit des fonctions pour gérer les bases de données: sélectionner, mettre à jour, insérer et supprimer des enregistrements, répertorier les tables, sauvegarder les tables sous forme de fichiers CSV et importer des fichiers CSV sous forme de tables.
+
+### Un extrait commenté de code R à retenir
+
+Analysons la fonction dbConnect()
+
+Cette fonction permet de créer la connecter à la database préalablement crée à l'aide de mariadb: 
+
+
+(**conn <- RMariaDB::dbConnect(RMariaDB::MariaDB(), user = "root", password = 'root', dbname = 'Top50', host = "127.0.0.1", port = 3306)**): 
+
++ user -> indiquer le nom d'utilisateur de la base de donnée
++ password -> indiquer le mot de passe de ce nom d'utilisateur
++ dbname -> indiquer le nom de la base de donnée sur lequel on souhaite travailler
++ host -> indiquer l'ip du serveur dans lequel se trouve la base de donnée
+
+
+
+### Evaluation du travail en question suivant mes 5 critères
+
++ Rédaction/orthographe: Rien à dire
++ Présentation/Structuration: Rien à dire
++ Code R: Ok
++ Compréhension global du sujet: Le sujet est très bien compris
++ Sources: source présente
+
+### Conclusion
+
+Bon sujet afin de comprendre l'interaction vers une base de donnée avec le language R.
+Tout cela sont bien présenté par les auteurs.
+
+\newpage
+
+## Travail de Claude REN(**ggplot2**)
+
+### Synthese du travail
+
+ggplot2 est un système de création graphique déclarative, basé sur The Grammar of Graphics. Vous fournissez les données, dites à ggplot2 comment mapper des variables à l'esthétique, quelles primitives graphiques utiliser et il s'occupe des détails.
+
+### Un extrait commenté de code R à retenir
+
+Anysons le code pour lire un CSV et plotter un graphique: 
+
+Pour commencer, récuperer le fichier csv dans une variable comme ceci: **file <- "cars.csv"** 
+Ensuite charge ce fichier dans une variable, comme ceci: **cars <- read.csv(file, sep = ";")** 
+
+Pour afficher le graphique representant le CSV, il suffit d'ecrire l'instruction suivante: plot(cars)
+
+### Evaluation du travail en question suivant mes 5 critères
+
++ Rédaction/orthographe: OK
++ Présentation/Structuration: OK
++ Code R: Ok
++ Compréhension global du sujet: Le sujet est très bien compris
++ Sources: source présente
+
+### Conclusion
+
+Ce package nous explique comment on charge un fichier de donnée afin d'en sortir
+un graphique. L'auteur illustre bien les différentes possiblités existantes afin de
+manipuler tout cela.
+
+\newpage
+
+## Travail de Soukaina EL GHALDY & Jiayue LUI(**dplyr**)
+
+### Synthese du travail
+
+dplyr est une grammaire de manipulation de données, fournissant un ensemble cohérent de verbes qui vous aident à résoudre les défis de manipulation de données les plus courants: 
+
++ mutate() ajoute de nouvelles variables qui sont des fonctions de variables existantes
++ select() sélectionne les variables en fonction de leurs noms
++ filter() sélectionne les observations en fonction de leurs valeurs
++ summary() réduit plusieurs valeurs à un seul résumé
++ arrange() modifie l'ordre des lignes
+
+### Un extrait commenté de code R à retenir
+
+Anysons un extrait de code montrant comment convertir un objet en objet tibble
+et comment par la suite faire des manipulations sur cet objet:  
+
+On lit le CSV dans data avec: 
+
++ data <- read.csv2("c:/Users/Soukaina/Documents/r_project/test.csv") 
+
+On le convertit en objet tibble: 
+
++ data <- as_tibble(data) 
+
+On selectionne les 5 première lignes: 
+
++ slice(data, 1:5)
+
+### Evaluation du travail en question suivant mes 5 critères
+
++ Rédaction/orthographe: OK
++ Présentation/Structuration: OK
++ Code R: Ok
++ Compréhension global du sujet: Sujet compris
++ Sources: Ok
+
+### Conclusion
+
+On apprends à travers ce document, une autre possibilité de manipuler les données
+chargé en CSV par exemple. L'ensemble est bien expliqué, et nous permet d'office
+d'utiliser ce package.
+
+\newpage
+
+## Travail de Claire MAZZUCATO et moi même (**data.table**)
+
+### Synthese du travail
+
+data.table fournit une version haute performance de data.frame de base R avec des améliorations de syntaxe et de fonctionnalités pour une facilité d'utilisation, une commodité et une vitesse de programmation.
+
+Si l'on souhaite réduire considérablement le temps de programmation et de calcul, alors ce package est fait pour ça. La philosophie à laquelle adhère data.table rend cela possible. Notre objectif est de l'illustrer à travers cette série
+d'exemples d'utilisations.
+
+### Un extrait commenté des expressions mathématiques à retenir
+
+La fonction setnames permet de faire renommer un colonne data.table: **setnames(mtcars_dt, 'vs', 'engine_type')**: 
+
++ mtcars_dt est un objet data.table
++ vs est le nom de colonne à renommer
++ engine_type est le nom de colonne qui va remplacer vs 
+
+
+### Evaluation du travail en question suivant mes 5 critères
+
++ Rédaction/orthographe: OK
++ Présentation/Structuration: OK
++ Code R: Ok
++ Compréhension global du sujet: Ok
++ Sources: Ok
+
+### Conclusion
+Ici est présenté un package utile est très connu sous le langage R.
+A travers ce document on voit de suite l'utilité que ça pourrait nous apporter.
