@@ -69,7 +69,7 @@ Pour terminer cette introduction, l'objectif de cette evaluation sera de démont
 
 La suite de ce document se divisera en deux grandes partie, la premiere regroupant l'ensemble des travaux en Mathematique et la deuxieme regroupant l'ensemble des travaux en R.
 
-
+[**Lien Github pour le fichier Rmd**](https://github.com/akjupiter/PSBX/tree/master/Examen_Maths_R)
 
 \newpage
 
